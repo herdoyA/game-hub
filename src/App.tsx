@@ -1,4 +1,5 @@
 import { Box, Hidden } from "@mui/material";
+import Nav from "./components/Nav";
 
 const App = () => {
   return (
@@ -9,7 +10,9 @@ const App = () => {
         md: `"nav nav" "aside main"`,
       }}
     >
-      <Box gridArea="nav">nav</Box>
+      <Box gridArea="nav">
+        <Nav />
+      </Box>
       <Hidden mdDown children={<Box gridArea="aside">aside</Box>} />
       <Box gridArea="main">main</Box>
     </Box>
