@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Game } from "../hooks/useGames";
+import PlatformIconList from "./PlatformIconList";
 
 interface Props {
   game: Game;
@@ -26,6 +27,10 @@ const GameCard = ({ game }: Props) => {
         <Typography variant="h3" fontSize={20} fontWeight="600">
           {game.name}
         </Typography>
+
+        <PlatformIconList
+          platforms={game.parent_platforms.map((p) => p.platform)}
+        />
       </CardContent>
     </Card>
   );
