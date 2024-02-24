@@ -3,10 +3,12 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  Stack,
   Typography,
 } from "@mui/material";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
+import CriticScore from "./CriticScore";
 
 interface Props {
   game: Game;
@@ -27,10 +29,16 @@ const GameCard = ({ game }: Props) => {
         <Typography variant="h3" fontSize={20} fontWeight="600">
           {game.name}
         </Typography>
-
-        <PlatformIconList
-          platforms={game.parent_platforms.map((p) => p.platform)}
-        />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <PlatformIconList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+          <CriticScore score={game.metacritic} />
+        </Stack>
       </CardContent>
     </Card>
   );
