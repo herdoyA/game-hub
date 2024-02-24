@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Container>
+    <Container maxWidth="xl">
       <App />
     </Container>
   </React.StrictMode>
