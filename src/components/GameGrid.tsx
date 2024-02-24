@@ -1,5 +1,6 @@
 import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import useGames from "../hooks/useGames";
+import GameCard from "./GameCard";
 
 const GameGrid = () => {
   const { loading, games, error } = useGames();
@@ -7,7 +8,7 @@ const GameGrid = () => {
   if (loading)
     return (
       <Stack alignItems="center" justifyContent="center" height="400px">
-        <CircularProgress />;
+        <CircularProgress />
       </Stack>
     );
 
@@ -24,14 +25,13 @@ const GameGrid = () => {
       gridTemplateColumns={{
         xs: "1fr",
         sm: "1fr 1fr",
-        md: "1fr 1fr 1fr",
+        md: "1fr 1fr",
+        lg: "1fr 1fr 1fr",
       }}
       gap={2}
     >
       {games.map((game) => (
-        <Box key={game.id} bgcolor="green">
-          {game.name}
-        </Box>
+        <GameCard key={game.id} game={game} />
       ))}
     </Box>
   );

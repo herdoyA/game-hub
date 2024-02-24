@@ -8,7 +8,7 @@ const Nav = () => {
       direction="row"
       alignItems="center"
       justifyContent="space-between"
-      py={2}
+      py={3}
     >
       <Box component="img" src={logo} width={60} />
       <ToggleTheme />
