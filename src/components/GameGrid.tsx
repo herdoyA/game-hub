@@ -1,33 +1,15 @@
-import { Box, Typography } from "@mui/material";
-import { CanceledError } from "axios";
-import { useEffect, useState } from "react";
-import apiClient from "../services/apiClient";
-
-interface Games {
-  id: string;
-  name: string;
-}
-
-interface ResponseData {
-  count: number;
-  results: Games[];
-}
+import { Box, CircularProgress, Stack, Typography } from "@mui/material";
+import useGames from "../hooks/useGames";
 
 const GameGrid = () => {
-  const [games, setGames] = useState<Games[]>([]);
-  const [error, setError] = useState("");
+  const { loading, games, error } = useGames();
 
-  useEffect(() => {
-    const controller = new AbortController();
-    apiClient
-      .get<ResponseData>("/games", { signal: controller.signal })
-      .then((res) => setGames(res.data.results))
-      .catch((err) => {
-        if (err instanceof CanceledError) return;
-        setError(err.message);
-      });
-    return () => controller.abort();
-  }, []);
+  if (loading)
+    return (
+      <Stack alignItems="center" justifyContent="center" height="400px">
+        <CircularProgress />;
+      </Stack>
+    );
 
   if (error)
     return (
