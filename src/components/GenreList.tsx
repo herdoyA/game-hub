@@ -5,9 +5,12 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import useGenres from "../hooks/useGenres";
 import { Typography } from "@mui/material";
+import GenreListLoading from "./GenreListLoading";
 
 const GenreList = () => {
-  const { genres, error } = useGenres();
+  const { genres, error, loading } = useGenres();
+
+  if (loading) return <GenreListLoading />;
 
   if (error)
     return (
