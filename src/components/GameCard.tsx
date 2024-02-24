@@ -26,9 +26,6 @@ const GameCard = ({ game }: Props) => {
         />
       </CardActionArea>
       <CardContent>
-        <Typography variant="h3" fontSize={20} fontWeight="600">
-          {game.name}
-        </Typography>
         <Stack
           direction="row"
           alignItems="center"
@@ -39,6 +36,9 @@ const GameCard = ({ game }: Props) => {
           />
           <CriticScore score={game.metacritic} />
         </Stack>
+        <Typography variant="h3" fontSize={20} fontWeight="600">
+          {game.name}
+        </Typography>
       </CardContent>
     </Card>
   );

@@ -8,7 +8,6 @@ const GamesLoading = () => {
         <Card key={i} sx={{ borderRadius: "15px", overflow: "hidden" }}>
           <Skeleton variant="rectangular" height={220} />
           <CardContent>
-            <Skeleton height={38} width="100%" />
             <Stack
               direction="row"
               alignItems="center"
@@ -17,6 +16,7 @@ const GamesLoading = () => {
               <Skeleton height={28} width="70%" />
               <Skeleton height={28} width="40px" />
             </Stack>
+            <Skeleton height={38} width="100%" />
           </CardContent>
         </Card>
       ))}
