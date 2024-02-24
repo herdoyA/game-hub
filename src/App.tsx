@@ -1,6 +1,7 @@
 import { Box, Hidden } from "@mui/material";
 import Nav from "./components/Nav";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 const App = () => {
   return (
@@ -18,7 +19,14 @@ const App = () => {
       <Box gridArea="nav">
         <Nav />
       </Box>
-      <Hidden mdDown children={<Box gridArea="aside">aside</Box>} />
+      <Hidden
+        mdDown
+        children={
+          <Box gridArea="aside">
+            <GenreList />
+          </Box>
+        }
+      />
       <Box gridArea="main">
         <GameGrid />
       </Box>
