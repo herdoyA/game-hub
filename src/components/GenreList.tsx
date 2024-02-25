@@ -6,6 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import useGenres from "../hooks/useGenres";
 import { Typography } from "@mui/material";
 import GenreListLoading from "./GenreListLoading";
+import getCroppedImageUrl from "../services/imageUrl";
 
 const GenreList = () => {
   const { genres, error, loading } = useGenres();
@@ -24,7 +25,11 @@ const GenreList = () => {
       {genres.map((genre) => (
         <ListItem key={genre.id} sx={{ padding: "5px 0px", cursor: "pointer" }}>
           <ListItemAvatar>
-            <Avatar src={genre.image_background} variant="rounded" sizes="" />
+            <Avatar
+              src={getCroppedImageUrl(genre.image_background)}
+              variant="rounded"
+              sizes=""
+            />
           </ListItemAvatar>
           <ListItemText primary={genre.name} />
         </ListItem>
