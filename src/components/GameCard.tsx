@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
         <CardMedia
           component="img"
           src={game.background_image}
-          height="220px"
+          height="200px"
           alt={game.name}
         />
       </CardActionArea>

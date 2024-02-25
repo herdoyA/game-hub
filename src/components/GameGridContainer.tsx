@@ -11,7 +11,7 @@ const GameGridContainer = ({ children }: PropsWithChildren) => {
         md: "1fr 1fr",
         lg: "1fr 1fr 1fr",
       }}
-      gap={2}
+      gap={3}
     >
       {children}
     </Box>

@@ -6,7 +6,7 @@ const GamesLoading = () => {
     <GameGridContainer>
       {[1, 2, 3, 4, 5, 6].map((i) => (
         <Card key={i} sx={{ borderRadius: "15px", overflow: "hidden" }}>
-          <Skeleton variant="rectangular" height={220} />
+          <Skeleton variant="rectangular" height={200} />
           <CardContent>
             <Stack
               direction="row"
